@@ -1,0 +1,27 @@
+{
+    "manifest_version":2,
+    "name":"Quick Click",
+    "description":"輔助選取教學評量，請同學依照實際上課情形調整選項",
+    "version":"1.0.0",
+    "icons":{
+        "128":"icon_128.png",
+        "48":"icon_48.png",
+        "16":"icon_16.png"
+    },
+    "page_action":{
+        "default_icon":"icon.png",
+        "default_popup":"popup.html"
+    },
+    "content_scripts":[
+        {
+            "matches":
+                ["https://uaap.ntua.edu.tw/*"],
+            "js":["content.js"]
+        }
+    ],
+    "background":{
+        "scripts":["eventPage.js"],
+        "persistent":false
+    },
+    "permissions":["activeTab","https://uaap.ntua.edu.tw/*"]
+}
